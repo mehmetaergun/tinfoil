@@ -1,0 +1,42 @@
+<html>
+<body>
+<table width=100%>
+  <tr>
+    <td bgcolor="white">
+      <form>
+        <input type="checkbox" name="vehicle" value="Bike"><b>clipboardevents</b>
+          <br>dom.event.clipboardevents.enabled lets websites get notifications if the user copies, pastes, or cuts something from a web page, and it lets them know which part of the page had been selected. The emitting of the oncopy, oncut and onpaste events are controlled by this preference.
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="white">
+      <form>
+        <input type="checkbox" name="vehicle" value="Bike"><b>clipboardevents</b>
+          <br>dom.event.clipboardevents.enabled lets websites get notifications if the user copies, pastes, or cuts something from a web page, and it lets them know which part of the page had been selected. The emitting of the oncopy, oncut and onpaste events are controlled by this preference.
+      </form>
+    </td>
+  </tr>
+</table>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+<p>Test</p>
+<p>Test2</p>
+</body>
+</html>
