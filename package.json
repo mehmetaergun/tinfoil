@@ -6,7 +6,7 @@
   "author": "",
   "homepage": "",
   "license": "MPL 2.0",
-  "version": "0.3",
+  "version": "0.5",
   "preferences": [
 	{
 		"name": "keepSettings",
@@ -44,36 +44,57 @@
 		"description": "This is necessary before uninstall/disable if you want to revert to Firefox default settings, because of a Mozilla SDK bug which currently ignores 'unload' events.",
 		"type": "control"
 	},
+  {
+    "name": "browser.cache.disk.enable",
+    "title": "browser.cache.disk.enable",
+    "description": "When a page is loaded, it can be cached so it doesn't need to be downloaded to be redisplayed. For e-mail and news, messages and attachments are cached as well. This preference controls whether to use the hard drive for caching purposes.",
+    "type": "bool",
+    "value": true
+  },
 	{
-		"name": "browserCacheDiskEnable",
-		"title": "browser.cache.disk.enable",
-		"description": "When a page is loaded, it can be cached so it doesn't need to be downloaded to be redisplayed. For e-mail and news, messages and attachments are cached as well. This preference controls whether to use the hard drive for caching purposes.",
-		"type": "bool",
-		"value": true
-	},
-	{
-		"name": "browserCacheMemoryEnable",
+		"name": "browser.cache.memory.enable",
 		"title": "browser.cache.memory.enable",
 		"description": "When a page is loaded, it can be cached so it doesn't need to be rerendered to be redisplayed. For e-mail and news, messages and attachments are cached as well. This preference controls whether to use memory to cache decoded images, messages, chrome (application user interface elements), and secure (https) pages",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "browserCacheOfflineEnable",
+		"name": "browser.cache.offline.enable",
 		"title": "browser.cache.offline.enable",
 		"description": "Recent versions of Mozilla offer an 'offline cache' that web applications can use to store data for retrieval even when the browser is offline. Combined with online/offline events, developers can write JavaScript that acts intelligently until the connection is restored.",
 		"type": "bool",
 		"value": true
 	},
+  {
+    "name": "browser.newtabpage.directory.ping",
+    "title": "browser.newtabpage.directory.ping",
+    "description": "Unticking this option should prevent the browser from reporting Tiles metrics.",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "browser.newtabpage.directory.source",
+    "title": "browser.newtabpage.directory.source",
+    "description": "Unticking this option should stop the browser from displaying and fetching Tiles from upstream.",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "browser.newtabpage.enabled",
+    "title": "browser.newtabpage.enabled",
+    "description": "Use a special page for new tabs. This could display private information, since the default is to show thumbnails of visited pages.",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "browser.newtabpage.enhanced",
+    "title": "browser.newtabpage.enhanced",
+    "description": "Use the new enhanced tiles on the about:newtab page.",
+    "type": "bool",
+    "value": true
+  },
 	{
-		"name": "browserNewtabpageEnabled",
-		"title": "browser.newtabpage.enabled",
-		"description": "Use a special page for new tabs. This could display private information, since the default is to show thumbnails of visited pages.",
-		"type": "bool",
-		"value": true
-	},
-	{
-		"name": "browserNewtabUrl",
+		"name": "browser.newtab.url",
 		"title": "browser.newtab.url",
 		"description": "What to use as newtab page.",
 		"type": "menulist",
@@ -94,135 +115,98 @@
 		]
 	},
 	{
-		"name": "browserThumbnailsDisabled",
+		"name": "browser.pagethumbnails.capturing_disabled",
 		"title": "browser.pagethumbnails.capturing_disabled",
 		"description": "Stop Firefox from taking screenshots for use as thumbnails on the newtab page. The screenshots could contain sensitive information.",
 		"type": "bool",
 		"value": false
 	},
 	{
-		"name": "browserSafebrowsingEnabled",
+		"name": "browser.safebrowsing.enabled",
 		"title": "browser.safebrowsing.enabled",
 		"description": "Firefox 2.0 incorporates the Google Safe Browsing extension in its own Phishing Protection feature to detect and warn users of phishy web sites.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "browserSafebrowsingMalwareEnabled",
+		"name": "browser.safebrowsing.malware.enabled",
 		"title": "browser.safebrowsing.malware.enabled",
 		"description": "As part of its Safe Browsing feature, Mozilla Firefox keeps track of a list of malware to compare against data the user downloads. In the event the user downloads known malware, a warning can be displayed. This preference determines whether to enable these malware checks.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "browserSearchSuggestEnabled",
+		"name": "browser.search.suggest.enabled",
 		"title": "browser.search.suggest.enabled",
 		"description": "In Firefox 2.0, search plugins can offer 'search suggestions' of similar search queries as the user enters a query in the search bar. This preference controls whether or not search suggestions are enabled.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "browserSendPings",
+		"name": "browser.send_pings",
 		"title": "browser.send_pings",
 		"description": "The Web Applications 1.0 specification (also known as HTML5) defines a new attribute for <a> elements: ping. This attribute contains one or more URIs to “ping” (send a POST request to) when the user clicks the link. The attribute would be useful for letting websites track visitors’ clicks.",
 		"type": "bool",
 		"value": false
 	},
 	{
-		"name": "browserStartupPage",
-		"title": "browser.startup.page",
-		"description": "Each time the web browser starts, this preference is consulted to determine what to display. It has superseded browser.sessionstore.resume_session as the preference determining whether saved sessions are restored.",
-		"type": "menulist",
-		"value": 1,
-		"options": [
-		  {
-			"value": "0",
-			"label": "Blank page"
-		  },
-		  {
-			"value": "1",
-			"label": "Home page(s) (default)"
-		  },
-		  {
-			"value": "2",
-			"label": "Last visited page"
-		  },
-		  {
-			"value": "3",
-			"label": "Resume previous session"
-		  }
-		]
-	},
-	{
-		"name": "datareportingHealthreportServiceEnabled",
+		"name": "datareporting.healthreport.service.enabled",
 		"title": "datareporting.healthreport.service.enabled",
 		"description": "Enables Health Report. While this type of data is useful to development and, ultimately, users, it could leak information.",
 		"type": "bool",
 		"value": false
 	},
+  {
+    "name": "datareporting.healthreport.uploadingEnabled",
+    "title": "datareporting.healthreport.uploadingEnabled",
+    "description": "Sends Health Report data to Mozilla. While this type of data is useful to development and, ultimately, users, it could leak information.",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "datareporting.policy.dataSubmissionEnabled",
+    "title": "datareporting.policy.dataSubmissionEnabled",
+    "description": "Sends Health Report data to Mozilla. While this type of data is useful to development and, ultimately, users, it could leak information.",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "dom.event.clipboardevents.enabled",
+    "title": "dom.event.clipboardevents.enabled",
+    "description": "lets websites get notifications if the user copies, pastes, or cuts something from a web page, and it lets them know which part of the page had been selected. The emitting of the oncopy, oncut and onpaste events are controlled by this preference.",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "dom.ipc.plugins.flash.subprocess.crashreporter.enabled",
+    "title": "dom.ipc.plugins.flash.subprocess.crashreporter.enabled",
+    "description": "lets websites get notifications if the user copies, pastes, or cuts something from a web page, and it lets them know which part of the page had been selected. The emitting of the oncopy, oncut and onpaste events are controlled by this preference.",
+    "type": "bool",
+    "value": true
+  },
 	{
-		"name": "datareportingHealthreportUploadEnabled",
-		"title": "datareporting.healthreport.uploadingEnabled",
-		"description": "Sends Health Report data to Mozilla. While this type of data is useful to development and, ultimately, users, it could leak information.",
-		"type": "bool",
-		"value": false
-	},
-	{
-		"name": "domEventClipboardeventsEnabled",
-		"title": "dom.event.clipboardevents.enabled",
-		"description": "lets websites get notifications if the user copies, pastes, or cuts something from a web page, and it lets them know which part of the page had been selected. The emitting of the oncopy, oncut and onpaste events are controlled by this preference.",
-		"type": "bool",
-		"value": true
-	},
-	{
-		"name": "domStorageEnabled",
+		"name": "dom.storage.enabled",
 		"title": "dom.storage.enabled",
 		"description": "The Web Applications 1.0 specification defines a mechanism allowing web pages to store information with a web browser (similar to cookies) called “client-side session and persistent storage.” Although use of session storage is subject to a user’s cookie preferences, this preference allows it to be disabled entirely.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "generalUseragentOverride",
-		"title": "general.useragent.override",
-		"description": "Customize User Agent. Likely to break websites. Clearing this textbox resets to default. Information from http://techblog.willshouse.com/2012/01/03/most-common-user-agents/",
-		"type": "menulist",
-		"value": "",
-		"options": [
-		  {
-			"value": "",
-			"label": "Default"
-		  },
-		  {
-			"value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36",
-			"label": "Chrome 35, Windows 7 64-bit (most common)"
-		  },
-		  {
-			"value": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0",
-			"label": "Firefox 31, Windows 7 64-bit"
-		  },
-		  {
-			"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.77.4 (KHTML, like Gecko) Version/7.0.5 Safari/537.77.4",
-			"label": "Safari 7, Mac OSX"
-		  },
-		  {
-			"value": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0",
-			"label": "Firefox 31, Ubuntu Linux"
-		  },
-		  {
-			"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D257 Safari/9537.53",
-			"label": "Mobile Safari 7, iOS"
-		  }
-		]
-	},
-	{
-		"name": "geoEnabled",
+		"name": "geo.enabled",
 		"title": "geo.enabled",
 		"description": "Reports geographical location. If disabled, note that sites could still have some idea of your location based on your IP address.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "networkCookieCookieBehavior",
+		"name": "media.gmp-gmpopenh264.enabled",
+		"title": "media.gmp-gmpopenh264.enabled",
+		"description": "New plugin that can't be made click-to-play.",
+		"type": "bool",
+		"value": true
+	},
+	{
+		"name": "network.cookie.cookieBehavior",
 		"title": "network.cookie.cookieBehavior",
 		"description": "What cookies are allowed",
 		"type": "menulist",
@@ -243,7 +227,7 @@
 		]
 	},
 	{
-		"name": "networkCookieLifetimePolicy",
+		"name": "network.cookie.lifetimePolicy",
 		"title": "network.cookie.lifetimePolicy",
 		"description": "How long cookies are kept",
 		"type": "menulist",
@@ -264,21 +248,21 @@
 		]
 	},
 	{
-		"name": "networkDnsDisablePrefetch",
+		"name": "network.dns.disablePrefetch",
 		"title": "network.dns.disablePrefetch",
 		"description": "DNS prefetching was implemented in Firefox 3.5 to improve page load time. This feature allows Firefox to perform domain name resolution proactively and in parallel for hyperlinks, images, CSS, JavaScript, and other webpage content.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "networkHttpRefererSpoofSource",
+		"name": "network.http.referer.spoofSource",
 		"title": "network.http.referer.spoofSource",
 		"description": "Send target as referrer.",
 		"type": "bool",
 		"value": false
 	},
 	{
-		"name": "networkHttpRefererXOriginPolicy",
+		"name": "network.http.referer.XOriginPolicy",
 		"title": "network.http.referer.XOriginPolicy",
 		"description": "Referrer cross-site origin policy defines when to send referrers.",
 		"type": "menulist",
@@ -299,7 +283,7 @@
 		]
 	},
 	{
-		"name": "networkHttpSendRefererHeader",
+		"name": "network.http.sendRefererHeader",
 		"title": "network.http.sendRefererHeader",
 		"description": "As part of HTTP, requests can include a 'Referer' (sic) header that tells the server which page the user was on that initiated the request. Servers use this information to track users' paths through the site and possibly provide additional features.",
 		"type": "menulist",
@@ -320,28 +304,28 @@
 		]
 	},
 	{
-		"name": "networkHttpSendSecureXSiteReferrer",
+		"name": "network.http.sendSecureXSiteReferrer",
 		"title": "network.http.sendSecureXSiteReferrer",
 		"description": "The HTTP spec specifies that going from a secure (https) server to a non-secure (http) server should not result in a Referer header being sent, but does not define whether a Referer should be sent between two secure sites. This preferences controls that option.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "networkPrefetchNext",
+		"name": "network.prefetch-next",
 		"title": "network.prefetch-next",
 		"description": "Link prefetching is when a webpage hints to the browser that certain pages are likely to be visited, so the browser downloads them immediately so they can be displayed immediately when the user requests it.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "networkProxySocksRemoteDns",
+		"name": "network.proxy.socks_remote_dns",
 		"title": "network.proxy.socks_remote_dns",
 		"description": "This preference controls whether DNS lookups for SOCKS v5 clients happen on the client or on the proxy server. *** NOTE: There's a bug report saying that this setting is ignored. It's here in hopes that it's fixed down the road.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "pluginStateFlash",
+		"name": "plugin.state.flash",
 		"title": "plugin.state.flash",
 		"description": "Restrict Flash for security and privacy.",
 		"type": "menulist",
@@ -362,28 +346,28 @@
 		]
 	},
 	{
-		"name": "pluginsClickToPlay",
+		"name": "plugins.click_to_play",
 		"title": "plugins.click_to_play",
 		"description": "prevents plugin content from loading until you activate the plugin.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "pluginsEnumerableNames",
+		"name": "plugins.enumerable_names",
 		"title": "plugins.enumerable_names",
 		"description": "Allows enumeration of plugins, which can be used for tracking/fingerprinting. Note that even if disabled, sites could still test for individual plugins and tell that they're present even if they're inaccessible due to Click to Play setting.",
 		"type": "bool",
 		"value": true
 	},
 	{
-		"name": "privacyDonottrackheaderEnabled",
+		"name": "privacy.donottrackheader.enabled",
 		"title": "privacy.donottrackheader.enabled",
 		"description": "The Do Not Track header field requests sites not track users. Its efficacy is debatable, however, as no site is obligated to honor the request. At the same time, it adds more identifiable information to browsing that can be used for fingerprinting.",
 		"type": "bool",
 		"value": false
 	},
 	{
-		"name": "toolkitTelemetryEnabled",
+		"name": "toolkit.telemetry.enabled",
 		"title": "toolkit.telemetry.enabled",
 		"description": "Sends browser statistics to Mozilla.",
 		"type": "bool",
