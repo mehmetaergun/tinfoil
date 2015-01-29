@@ -6,7 +6,7 @@
   "author": "",
   "homepage": "",
   "license": "MPL 2.0",
-  "version": "0.5",
+  "version": "0.6",
   "preferences": [
 	{
 		"name": "keepSettings",
@@ -198,13 +198,20 @@
 		"type": "bool",
 		"value": true
 	},
-	{
-		"name": "media.gmp-gmpopenh264.enabled",
-		"title": "media.gmp-gmpopenh264.enabled",
-		"description": "New plugin that can't be made click-to-play.",
-		"type": "bool",
-		"value": true
-	},
+  {
+    "name": "media.gmp-gmpopenh264.enabled",
+    "title": "media.gmp-gmpopenh264.enabled",
+    "description": "New plugin that can't be made click-to-play.",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "media.peerconnection.enabled",
+    "title": "media.peerconnection.enabled",
+    "description": "WebRTC can access your local IP addresses even through proxies.",
+    "type": "bool",
+    "value": true
+  },
 	{
 		"name": "network.cookie.cookieBehavior",
 		"title": "network.cookie.cookieBehavior",
