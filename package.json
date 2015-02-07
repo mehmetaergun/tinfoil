@@ -6,7 +6,7 @@
   "author": "",
   "homepage": "",
   "license": "MPL 2.0",
-  "version": "0.6",
+  "version": "0.7",
   "preferences": [
     {
       "name": "keepSettings",
@@ -370,6 +370,13 @@
       "name": "privacy.donottrackheader.enabled",
       "title": "privacy.donottrackheader.enabled",
       "description": "The Do Not Track header field requests sites not track users. Its efficacy is debatable, however, as no site is obligated to honor the request. At the same time, it adds more identifiable information to browsing that can be used for fingerprinting.",
+      "type": "bool",
+      "value": false
+    },
+    {
+      "name": "privacy.trackingprotection.enabled",
+      "title": "privacy.trackingprotection.enabled",
+      "description": "Blocks 3rd party trackers based on Disconnect's blocklist.",
       "type": "bool",
       "value": false
     },
